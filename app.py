@@ -50,3 +50,12 @@ st.markdown(
 | 14 | Time evolution in a box | Four-level superposition and **|ψ(x,t)|²** |
 """
 )
+
+st.markdown("#### Part III — Problem laboratory (Ch. 15)")
+st.markdown(
+    r"""
+| Ch. | Topic | Focus |
+|---:|--------|--------|
+| 15 | Problem laboratory | Traveling waves, Young interference, two-qubit entanglement (tabs) |
+"""
+)

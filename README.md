@@ -1,6 +1,6 @@
 # QM Visual
 
-Interactive quantum mechanics: fourteen chapters in a browser-based course. **Chapters 1–5** treat postulates, finite-dimensional Hilbert space, measurement and Born weights, Pauli observables, and an uncertainty relation for Pauli matrices. **Chapters 6–14** treat one-dimensional wave packets, bound states, barriers and steps, interference, hydrogen angular probability on the sphere, the Bloch sphere, and time evolution in an infinite well.
+Interactive quantum mechanics: **fifteen** chapters in a browser-based course. **Chapters 1–5** treat postulates, finite-dimensional Hilbert space, measurement and Born weights, Pauli observables, and an uncertainty relation for Pauli matrices. **Chapters 6–14** treat one-dimensional wave packets, bound states, barriers and steps, interference, hydrogen angular probability on the sphere, the Bloch sphere, and time evolution in an infinite well. **Chapter 15** is a combined problem laboratory (traveling waves, Young pattern, two-qubit entanglement).
 
 **Course app:** [https://quantum-mechanics-visualized-bydevcmrl.streamlit.app](https://quantum-mechanics-visualized-bydevcmrl.streamlit.app)
 
@@ -22,6 +22,7 @@ Interactive quantum mechanics: fourteen chapters in a browser-based course. **Ch
 | 12 | Hydrogen: angular probability density |
 | 13 | Bloch sphere |
 | 14 | Time evolution in a box |
+| 15 | Problem laboratory (waves, Young, two-qubit) |
 
 ## License
 

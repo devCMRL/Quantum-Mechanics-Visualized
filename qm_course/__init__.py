@@ -10,6 +10,7 @@ from qm_course import (
     bloch,
     finite_hilbert,
     qubit,
+    two_qubit,
 )
 
 __all__ = [
@@ -22,4 +23,5 @@ __all__ = [
     "bloch",
     "finite_hilbert",
     "qubit",
+    "two_qubit",
 ]
