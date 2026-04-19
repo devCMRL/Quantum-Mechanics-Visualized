@@ -1,13 +1,13 @@
-"""Chapter 11 — finite-dimensional complex Hilbert space (column kets)."""
+"""Chapter 2 — finite-dimensional complex Hilbert space (column kets)."""
 
 import numpy as np
 import streamlit as st
 
 from qm_course.finite_hilbert import inner, norm, normalize
 
-st.set_page_config(page_title="Ch 11 — Finite Hilbert space", layout="wide")
+st.set_page_config(page_title="Ch 2 — Finite Hilbert space", layout="wide")
 
-st.title("Chapter 11 — Finite-dimensional Hilbert space")
+st.title("Chapter 2 — Finite-dimensional Hilbert space")
 st.caption(r"Column vectors in $\mathbb{C}^N$: normalization, inner product, and distance between normalized rays.")
 
 dim = st.radio("Dimension N", [2, 3, 4], horizontal=True)

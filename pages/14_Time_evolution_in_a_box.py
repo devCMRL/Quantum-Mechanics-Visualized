@@ -1,4 +1,4 @@
-"""Chapter 09 — time evolution of a superposition in an infinite well."""
+"""Chapter 14 — time evolution of a superposition in an infinite well."""
 
 import numpy as np
 import plotly.graph_objects as go
@@ -7,9 +7,9 @@ import streamlit as st
 from qm_course.figures import style_figure
 from qm_course.infinite_well import energy_eigenvalue, stationary_state, time_evolve_coeffs
 
-st.set_page_config(page_title="Ch 09 — Time evolution", layout="wide")
+st.set_page_config(page_title="Ch 14 — Time evolution", layout="wide")
 
-st.title("Chapter 9 — Time evolution in a box")
+st.title("Chapter 14 — Time evolution in a box")
 st.caption("Superposition of the four lowest box levels; |ψ|² evolves as each component picks up its energy phase e^{-iEₙt/ħ}.")
 
 L = 1.0

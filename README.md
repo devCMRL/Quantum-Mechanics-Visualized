@@ -1,6 +1,6 @@
 # QM Visual
 
-Interactive quantum mechanics modules delivered as a Streamlit application: finite-dimensional formalism (Ch. 10–14) and one-dimensional wave mechanics plus selected three-dimensional angular plots (Ch. 1–9).
+Interactive quantum mechanics modules delivered as a Streamlit application: fourteen numbered chapters — **1–5** (postulates, Hilbert space, measurement, Pauli observables, uncertainty) and **6–14** (wave packets through time evolution in a box), with one spherical-harmonic visualization on the unit sphere.
 
 ## Repository layout
 
@@ -50,7 +50,7 @@ git remote add origin https://github.com/YOUR_USER/YOUR_REPO.git
 git push -u origin main
 ```
 
-Replace the remote URL with your repository. Add a `LICENSE` file before publishing if you want a clear reuse policy.
+Replace the remote URL with your repository (for example `https://github.com/devCMRL/Quantum-Mechanics-Visualized.git`).
 
 ## Extending the course
 
@@ -64,4 +64,4 @@ Third-party libraries are listed in `THIRD_PARTY.md`. Any adapted external mater
 
 ## License
 
-Add a `LICENSE` file at the repository root for public distribution.
+See the `LICENSE` file at the repository root (MIT).

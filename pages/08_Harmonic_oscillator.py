@@ -1,4 +1,4 @@
-"""Chapter 03 — 1D harmonic oscillator stationary states."""
+"""Chapter 8 — 1D harmonic oscillator stationary states."""
 
 import numpy as np
 import plotly.graph_objects as go
@@ -7,9 +7,9 @@ import streamlit as st
 from qm_course.figures import style_figure
 from qm_course.harmonic import energy_eigenvalue, psi_n
 
-st.set_page_config(page_title="Ch 03 — Harmonic oscillator", layout="wide")
+st.set_page_config(page_title="Ch 8 — Harmonic oscillator", layout="wide")
 
-st.title("Chapter 3 — Quantum harmonic oscillator")
+st.title("Chapter 8 — Quantum harmonic oscillator")
 st.caption("Units ħ = m = ω = 1. Stationary-state probability density |ψₙ|².")
 
 col1, col2 = st.columns([1, 2])

@@ -1,4 +1,4 @@
-"""Chapter 04 — rectangular barrier transmission."""
+"""Chapter 9 — rectangular barrier transmission."""
 
 import numpy as np
 import plotly.graph_objects as go
@@ -8,9 +8,9 @@ import streamlit as st
 from qm_course.barrier import transmission_probability
 from qm_course.figures import style_figure
 
-st.set_page_config(page_title="Ch 04 — Barrier tunneling", layout="wide")
+st.set_page_config(page_title="Ch 9 — Barrier tunneling", layout="wide")
 
-st.title("Chapter 4 — Rectangular barrier")
+st.title("Chapter 9 — Rectangular barrier")
 st.caption("Analytic transmission T(E) for a barrier V₀ on [0, a] with m = ħ = 1.")
 
 col1, col2 = st.columns([1, 2])

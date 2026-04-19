@@ -1,4 +1,4 @@
-"""Chapter 02 — infinite square well eigenstates and simple superpositions."""
+"""Chapter 7 — infinite square well eigenstates and simple superpositions."""
 
 import numpy as np
 import plotly.graph_objects as go
@@ -7,9 +7,9 @@ import streamlit as st
 from qm_course.figures import style_figure
 from qm_course.infinite_well import energy_eigenvalue, stationary_state, superposition
 
-st.set_page_config(page_title="Ch 02 — Particle in a box", layout="wide")
+st.set_page_config(page_title="Ch 7 — Particle in a box", layout="wide")
 
-st.title("Chapter 2 — Infinite square well")
+st.title("Chapter 7 — Infinite square well")
 st.caption("Box from x = 0 to L: stationary states sin(nπx/L) and a three-mode superposition.")
 
 L = 1.0
@@ -71,6 +71,6 @@ with st.expander("Key points"):
         """
 - Higher **n** adds more nodes: the **n**th level has **n − 1** interior nodes.
 - A **superposition** is not an energy eigenstate unless only one coefficient is nonzero; **|ψ|²** is time-dependent
-  (Chapter 9).
+  (Chapter 14).
 """
     )

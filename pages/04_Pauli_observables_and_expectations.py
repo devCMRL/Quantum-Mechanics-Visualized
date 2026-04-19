@@ -1,4 +1,4 @@
-"""Chapter 13 — Pauli matrices as qubit observables and expectation values."""
+"""Chapter 4 — Pauli matrices as qubit observables and expectation values."""
 
 import numpy as np
 import streamlit as st
@@ -12,9 +12,9 @@ from qm_course.qubit import (
     ket_from_bloch,
 )
 
-st.set_page_config(page_title="Ch 13 — Pauli observables", layout="wide")
+st.set_page_config(page_title="Ch 4 — Pauli observables", layout="wide")
 
-st.title("Chapter 13 — Pauli observables and ⟨A⟩")
+st.title("Chapter 4 — Pauli observables and ⟨A⟩")
 st.caption("Hermitian Pauli matrices on ℂ²: expectations from the standard Bloch parametrization.")
 
 col1, col2 = st.columns([1, 1])
@@ -62,6 +62,6 @@ with st.expander("Key points"):
         r"""
 - Expectation values **⟨σk⟩** are ensemble averages for identically prepared systems; here they are computed for a single declared pure state.
 - For a pure qubit, $(\langle\sigma_x\rangle, \langle\sigma_y\rangle, \langle\sigma_z\rangle)$ equals
-  $(\sin\theta\cos\varphi, \sin\theta\sin\varphi, \cos\theta)$, i.e. the Cartesian Bloch vector (Chapter 8).
+  $(\sin\theta\cos\varphi, \sin\theta\sin\varphi, \cos\theta)$, i.e. the Cartesian Bloch vector (Chapter 13).
 """
     )

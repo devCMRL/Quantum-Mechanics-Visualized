@@ -1,4 +1,4 @@
-"""Chapter 07 — hydrogen angular probability on the sphere."""
+"""Chapter 12 — hydrogen angular probability on the sphere."""
 
 import numpy as np
 import plotly.graph_objects as go
@@ -6,9 +6,9 @@ import streamlit as st
 
 from qm_course.hydrogen_angular import angular_probability_mesh
 
-st.set_page_config(page_title="Ch 07 — Hydrogen angular", layout="wide")
+st.set_page_config(page_title="Ch 12 — Hydrogen angular", layout="wide")
 
-st.title("Chapter 7 — Hydrogen: angular probability density")
+st.title("Chapter 12 — Hydrogen: angular probability density")
 st.caption("Angular probability density |Y_ℓ^m(θ, φ)|² on the unit sphere (radial factor omitted).")
 
 col1, col2 = st.columns([1, 2])

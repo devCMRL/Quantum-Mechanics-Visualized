@@ -1,13 +1,13 @@
-"""Chapter 01 — free one-dimensional Gaussian wavepacket (real part)."""
+"""Chapter 6 — free one-dimensional Gaussian wavepacket (real part)."""
 import numpy as np
 import plotly.graph_objects as go
 import streamlit as st
 
 from qm_course.figures import style_figure
 
-st.set_page_config(page_title="Ch 01 — Wavepacket", layout="wide")
+st.set_page_config(page_title="Ch 6 — Wavepacket", layout="wide")
 
-st.title("Chapter 1 — Gaussian wavepacket in 1D")
+st.title("Chapter 6 — Gaussian wavepacket in 1D")
 st.caption("Real part of a Gaussian envelope modulated by a plane wave: width, center, and wavenumber.")
 
 col_ctrl, col_plot = st.columns([1, 2])
@@ -76,6 +76,6 @@ with st.expander("Key points"):
         """
 - **σ** controls how many oscillations fit under the bell: smaller σ ⇒ more localized packet (fewer oscillations visible).
 - **k₀** controls oscillation frequency in space (local wavelength λ ≈ 2π/k₀ for large k₀).
-- **x₀** translates the pattern in **x**. Time evolution and potentials appear in later chapters (e.g. the infinite well and barrier modules).
+- **x₀** translates the pattern in **x**. Potentials and time evolution are treated in Chapters **7**, **9**, and **14**.
 """
     )

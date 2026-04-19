@@ -1,4 +1,4 @@
-"""Chapter 08 — Bloch sphere for a pure qubit state."""
+"""Chapter 13 — Bloch sphere for a pure qubit state."""
 
 import numpy as np
 import plotly.graph_objects as go
@@ -6,9 +6,9 @@ import streamlit as st
 
 from qm_course.bloch import bloch_vector
 
-st.set_page_config(page_title="Ch 08 — Bloch sphere", layout="wide")
+st.set_page_config(page_title="Ch 13 — Bloch sphere", layout="wide")
 
-st.title("Chapter 8 — Bloch sphere (spin-½ intuition)")
+st.title("Chapter 13 — Bloch sphere (spin-½ intuition)")
 st.caption(
     r"Pure state $|\psi\rangle = \cos\frac{\theta}{2}|0\rangle + e^{i\varphi}\sin\frac{\theta}{2}|1\rangle$ "
     "mapped to a unit vector on the sphere."

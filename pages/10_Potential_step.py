@@ -1,4 +1,4 @@
-"""Chapter 05 — potential step scattering (real part of ψ)."""
+"""Chapter 10 — potential step scattering (real part of ψ)."""
 
 import numpy as np
 import plotly.graph_objects as go
@@ -7,9 +7,9 @@ import streamlit as st
 from qm_course.figures import style_figure
 from qm_course.step_potential import plane_wave_step_real
 
-st.set_page_config(page_title="Ch 05 — Potential step", layout="wide")
+st.set_page_config(page_title="Ch 10 — Potential step", layout="wide")
 
-st.title("Chapter 5 — Potential step")
+st.title("Chapter 10 — Potential step")
 st.caption("V(x) = 0 for x < 0 and V(x) = V₀ for x ≥ 0. Stationary solution with unit incident amplitude from the left.")
 
 col1, col2 = st.columns([1, 2])

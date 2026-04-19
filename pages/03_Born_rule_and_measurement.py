@@ -1,13 +1,13 @@
-"""Chapter 12 — Born rule, expectation value of H, and projective measurement sampling."""
+"""Chapter 3 — Born rule, expectation value of H, and projective measurement sampling."""
 
 import numpy as np
 import streamlit as st
 
 from qm_course.finite_hilbert import born_probabilities, expectation, normalize
 
-st.set_page_config(page_title="Ch 12 — Born rule", layout="wide")
+st.set_page_config(page_title="Ch 3 — Born rule", layout="wide")
 
-st.title("Chapter 12 — Born rule and measuring an observable")
+st.title("Chapter 3 — Born rule and measuring an observable")
 st.caption(
     "Real symmetric 2×2 Hamiltonian **H**: expansion in the eigenbasis, Born weights **pᵢ**, and single-shot sampling."
 )

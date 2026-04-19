@@ -1,4 +1,4 @@
-"""Chapter 06 — two-slit interference (scalar wave model)."""
+"""Chapter 11 — two-slit interference (scalar wave model)."""
 
 import numpy as np
 import plotly.graph_objects as go
@@ -7,9 +7,9 @@ import streamlit as st
 from qm_course.double_slit import intensity_on_screen
 from qm_course.figures import style_figure
 
-st.set_page_config(page_title="Ch 06 — Double slit", layout="wide")
+st.set_page_config(page_title="Ch 11 — Double slit", layout="wide")
 
-st.title("Chapter 6 — Double-slit interference")
+st.title("Chapter 11 — Double-slit interference")
 st.caption("Scalar Fraunhofer diffraction: two slits with finite width (small-angle approximation).")
 
 col1, col2 = st.columns([1, 2])

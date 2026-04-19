@@ -1,4 +1,4 @@
-"""Chapter 14 — Robertson-type uncertainty for Pauli σx and σz on a pure qubit."""
+"""Chapter 5 — Robertson-type uncertainty for Pauli σx and σz on a pure qubit."""
 
 import numpy as np
 import plotly.graph_objects as go
@@ -7,9 +7,9 @@ import streamlit as st
 from qm_course.figures import style_figure
 from qm_course.qubit import ket_from_bloch, robertson_sigma_x_sigma_z
 
-st.set_page_config(page_title="Ch 14 — Uncertainty σx σz", layout="wide")
+st.set_page_config(page_title="Ch 5 — Uncertainty σx σz", layout="wide")
 
-st.title("Chapter 14 — Uncertainty: Δσx Δσz vs |⟨σy⟩|")
+st.title("Chapter 5 — Uncertainty: Δσx Δσz vs |⟨σy⟩|")
 st.caption(
     "Pure qubit from Bloch angles. For Pauli matrices, Δσx Δσz ≥ |⟨σy⟩| (Robertson form specialized to this pair)."
 )
