@@ -2,6 +2,8 @@
 
 Interactive quantum mechanics: fourteen chapters in a browser-based course. **Chapters 1–5** treat postulates, finite-dimensional Hilbert space, measurement and Born weights, Pauli observables, and an uncertainty relation for Pauli matrices. **Chapters 6–14** treat one-dimensional wave packets, bound states, barriers and steps, interference, hydrogen angular probability on the sphere, the Bloch sphere, and time evolution in an infinite well.
 
+**Course app:** [https://quantum-mechanics-visualized-bydevcmrl.streamlit.app](https://quantum-mechanics-visualized-bydevcmrl.streamlit.app)
+
 ## Curriculum
 
 | Ch. | Topic |
