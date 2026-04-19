@@ -1,8 +1,10 @@
 """Chapter 2 — finite-dimensional complex Hilbert space (column kets)."""
 
 import numpy as np
+import plotly.graph_objects as go
 import streamlit as st
 
+from qm_course.figures import style_figure
 from qm_course.finite_hilbert import inner, norm, normalize
 
 st.set_page_config(page_title="Ch 2 — Finite Hilbert space", layout="wide")
@@ -36,6 +38,57 @@ if st.button("Normalize |ψ⟩ (in-place in session)"):
             st.session_state[f"re{i}"] = float(np.real(psi_n[i]))
             st.session_state[f"im{i}"] = float(np.imag(psi_n[i]))
         st.rerun()
+
+st.divider()
+st.subheader("Visualizations")
+psi_plot = normalize(psi) if npsi > 1e-12 else np.zeros(dim, dtype=complex)
+w = np.abs(psi_plot) ** 2
+fig1 = go.Figure(
+    go.Bar(
+        x=[str(i) for i in range(dim)],
+        y=w,
+        marker_color="#5b8def",
+        name=r"$|c_i|^2$",
+    )
+)
+fig1.update_xaxes(title_text="Basis index (computational)")
+fig1.update_yaxes(title_text=r"$|c_i|^2$ for normalized $|\psi\rangle$", range=[0, max(1.05 * w.max(), 0.05)])
+fig1.update_layout(showlegend=False)
+style_figure(fig1, height=360)
+
+theta_circle = np.linspace(0, 2 * np.pi, 120)
+fig2 = go.Figure()
+fig2.add_trace(
+    go.Scatter(
+        x=np.cos(theta_circle),
+        y=np.sin(theta_circle),
+        mode="lines",
+        line=dict(color="#475569", dash="dash"),
+        name="Unit circle",
+    )
+)
+fig2.add_trace(
+    go.Scatter(
+        x=np.real(psi),
+        y=np.imag(psi),
+        mode="markers+text",
+        text=[str(i) for i in range(dim)],
+        textposition="top center",
+        marker=dict(size=12, color="#f97316"),
+        name=r"$c_i$",
+    )
+)
+fig2.update_xaxes(title_text=r"$\mathrm{Re}\,c_i$", scaleanchor="y", scaleratio=1)
+fig2.update_yaxes(title_text=r"$\mathrm{Im}\,c_i$")
+fig2.update_layout(showlegend=False)
+style_figure(fig2, height=360)
+
+cvis1, cvis2 = st.columns(2)
+with cvis1:
+    st.plotly_chart(fig1, use_container_width=True)
+with cvis2:
+    st.caption("Coefficients in the complex plane (unnormalized components; dashed circle is unit modulus).")
+    st.plotly_chart(fig2, use_container_width=True)
 
 st.divider()
 st.subheader(r"Second ket $|\phi\rangle$ (for inner product)")

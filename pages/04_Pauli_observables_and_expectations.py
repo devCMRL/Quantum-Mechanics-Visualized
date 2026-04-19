@@ -1,8 +1,11 @@
 """Chapter 4 — Pauli matrices as qubit observables and expectation values."""
 
 import numpy as np
+import plotly.graph_objects as go
 import streamlit as st
 
+from qm_course.bloch import bloch_vector
+from qm_course.figures import style_figure
 from qm_course.qubit import (
     SIGMA_X,
     SIGMA_Y,
@@ -34,6 +37,72 @@ with col2:
     st.metric("⟨σx⟩", f"{ex:.4f}")
     st.metric("⟨σy⟩", f"{ey:.4f}")
     st.metric("⟨σz⟩", f"{ez:.4f}")
+
+st.subheader("Visualizations")
+fig_b = go.Figure(
+    data=[
+        go.Bar(
+            x=["⟨σx⟩", "⟨σy⟩", "⟨σz⟩"],
+            y=[ex, ey, ez],
+            marker_color=["#38bdf8", "#a78bfa", "#f97316"],
+            text=[f"{ex:.3f}", f"{ey:.3f}", f"{ez:.3f}"],
+            textposition="auto",
+        )
+    ]
+)
+fig_b.update_yaxes(title_text="Expectation value", range=[-1.15, 1.15])
+fig_b.update_layout(showlegend=False)
+style_figure(fig_b, height=380)
+
+bx, by, bz = bloch_vector(theta, phi)
+uu = np.linspace(0, 2 * np.pi, 40)
+vv = np.linspace(0, np.pi, 20)
+uu, vv = np.meshgrid(uu, vv)
+xs = np.cos(uu) * np.sin(vv)
+ys = np.sin(uu) * np.sin(vv)
+zs = np.cos(vv)
+fig_s = go.Figure()
+fig_s.add_trace(
+    go.Surface(
+        x=xs,
+        y=ys,
+        z=zs,
+        opacity=0.22,
+        showscale=False,
+        colorscale=[[0, "#475569"], [1, "#475569"]],
+        hoverinfo="skip",
+    )
+)
+fig_s.add_trace(
+    go.Scatter3d(
+        x=[0, bx],
+        y=[0, by],
+        z=[0, bz],
+        mode="lines+markers",
+        line=dict(color="#38bdf8", width=10),
+        marker=dict(size=[0, 10], color=["#94a3b8", "#f97316"]),
+        name=r"$\langle\boldsymbol{\sigma}\rangle$ direction",
+    )
+)
+fig_s.update_layout(
+    template="plotly_dark",
+    height=420,
+    margin=dict(l=0, r=0, t=30, b=0),
+    scene=dict(
+        aspectmode="data",
+        xaxis=dict(range=[-1.1, 1.1], title="x"),
+        yaxis=dict(range=[-1.1, 1.1], title="y"),
+        zaxis=dict(range=[-1.1, 1.1], title="z"),
+    ),
+    showlegend=False,
+)
+
+vb1, vb2 = st.columns(2)
+with vb1:
+    st.plotly_chart(fig_b, use_container_width=True)
+with vb2:
+    st.caption("Bloch vector $(\\langle\\sigma_x\\rangle, \\langle\\sigma_y\\rangle, \\langle\\sigma_z\\rangle)$ for this pure state.")
+    st.plotly_chart(fig_s, use_container_width=True)
 
 st.divider()
 st.subheader(r"Directional observable $\mathbf{n}\cdot\boldsymbol{\sigma}$ with $|\mathbf{n}|=1$")

@@ -1,8 +1,10 @@
 """Chapter 3 — Born rule, expectation value of H, and projective measurement sampling."""
 
 import numpy as np
+import plotly.graph_objects as go
 import streamlit as st
 
+from qm_course.figures import style_figure
 from qm_course.finite_hilbert import born_probabilities, expectation, normalize
 
 st.set_page_config(page_title="Ch 3 — Born rule", layout="wide")
@@ -45,6 +47,53 @@ with mcol2:
 with mcol3:
     st.metric(r"$p_1 = |c_1|^2$", f"{p[1]:.4f}")
 
+st.subheader("Visualizations")
+fig_p = go.Figure(
+    go.Bar(
+        x=[r"$p_0$", r"$p_1$"],
+        y=[p[0], p[1]],
+        marker_color=["#38bdf8", "#a78bfa"],
+        text=[f"{p[0]:.3f}", f"{p[1]:.3f}"],
+        textposition="auto",
+    )
+)
+fig_p.update_yaxes(title_text="Probability", range=[0, 1.05])
+fig_p.update_layout(showlegend=False)
+style_figure(fig_p, height=380)
+
+e0, e1 = float(evals[0]), float(evals[1])
+eh_r = float(np.real(eh))
+fig_e = go.Figure()
+fig_e.add_trace(
+    go.Scatter(
+        x=[0, 1],
+        y=[e0, e1],
+        mode="markers+lines+text",
+        text=[r"$E_0$", r"$E_1$"],
+        textposition="top center",
+        marker=dict(size=14, color="#f97316"),
+        line=dict(color="#64748b"),
+        name="Eigenvalues",
+    )
+)
+fig_e.add_hline(
+    y=eh_r,
+    line_dash="dash",
+    line_color="#22c55e",
+    annotation_text=r"$\langle H\rangle$",
+    annotation_position="right",
+)
+fig_e.update_xaxes(title_text="", tickvals=[0, 1], ticktext=[r"level 0", r"level 1"], range=[-0.2, 1.2])
+fig_e.update_yaxes(title_text="Energy (numerical units)")
+fig_e.update_layout(showlegend=False)
+style_figure(fig_e, height=380)
+
+pv1, pv2 = st.columns(2)
+with pv1:
+    st.plotly_chart(fig_p, use_container_width=True)
+with pv2:
+    st.plotly_chart(fig_e, use_container_width=True)
+
 st.markdown(
     rf"""
 Eigenvalues **E₀ = {evals[0]:.4f}**, **E₁ = {evals[1]:.4f}** (ascending order).
@@ -69,6 +118,17 @@ if st.session_state.meas_hist:
         f"Empirical frequencies after {total} trials: outcome 0 → {hist[0]/total:.2%}, "
         f"outcome 1 → {hist[1]/total:.2%}."
     )
+    emp = hist.astype(float) / total
+    fig_cmp = go.Figure(
+        data=[
+            go.Bar(name="Born", x=[r"$i=0$", r"$i=1$"], y=[p[0], p[1]], marker_color="#38bdf8"),
+            go.Bar(name="Empirical", x=[r"$i=0$", r"$i=1$"], y=[emp[0], emp[1]], marker_color="#94a3b8"),
+        ]
+    )
+    fig_cmp.update_layout(barmode="group", legend=dict(orientation="h", y=1.08, x=1))
+    fig_cmp.update_yaxes(title_text="Probability", range=[0, 1.05])
+    style_figure(fig_cmp, height=380)
+    st.plotly_chart(fig_cmp, use_container_width=True)
     if st.button("Clear measurement history"):
         st.session_state.meas_hist = []
         st.session_state.pop("last_idx", None)
